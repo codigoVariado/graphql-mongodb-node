@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d dist --source-maps",
+    "start": "nodemon src/index.js --exec babel-node",
+    "serve": "node src/index.js",
+    "clean": "rimraf dist"
   },
   "repository": {
     "type": "git",
@@ -18,6 +22,18 @@
   },
   "homepage": "https://github.com/codigoVariado/practica-de-graphql-con-node-y-mongodb#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^15.0.0",
+    "graphql-tools": "^6.0.3",
+    "mongoose": "^5.9.16",
+    "nodemon": "^2.0.4",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.0",
+    "@babel/core": "^7.10.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.10.0"
   }
 }
